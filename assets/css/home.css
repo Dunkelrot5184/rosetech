@@ -1,0 +1,118 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #111;
+  --card-bg: #ffffffcc;
+  --accent: #6c63ff;
+}
+
+body.dark {
+  --bg: #121212;
+  --text: #f0f0f0;
+  --card-bg: #1e1e1ecc;
+  --accent: #82aaff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.switch {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  display: inline-block;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.switch input:checked + .slider {
+  background-color: var(--accent);
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  width: 260px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  background: transparent;
+  color: var(--text);
+}
